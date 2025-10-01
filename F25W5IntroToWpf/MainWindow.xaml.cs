@@ -23,7 +23,13 @@ namespace F25W5IntroToWpf
 
         private void btnShow_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Hello world");
+            string name = txtFirstname.Text;
+            var result = MessageBox.Show("Hello " + name, "Message", MessageBoxButton.YesNo, MessageBoxImage.Information);
+
+            if (result == MessageBoxResult.Yes)
+                MessageBox.Show("YES clicked");
+            else
+                MessageBox.Show("NO clicked");
         }
     }
 }
